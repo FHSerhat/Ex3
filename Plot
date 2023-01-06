@@ -1,0 +1,16 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# read data from file
+data = np.genfromtxt("https://raw.githubusercontent.com/xaratustrah/teaching/5357c4f3214071f76dbe0f50cbc2d0051fbb29fb/appacc2223/2016-07-11_ipm_data.txt", usecols=0)
+
+# plot data in blue on a black grid background
+plt.plot(data, 'b-')
+plt.grid(color='k', linestyle='-', linewidth=0.1)
+
+# mark maximum with a red dot
+max_index = np.argmax(data)
+plt.plot(max_index, data[max_index], 'ro')
+
+# save figure as PNG
+plt.savefig("plot.png")
